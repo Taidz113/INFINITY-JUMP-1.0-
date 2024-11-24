@@ -1,0 +1,160 @@
+local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+function nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ(data) m=string.sub(data, 0, 55) data=data:gsub(m,'')
+
+data = string.gsub(data, '[^'..b..'=]', '') return (data:gsub('.', function(x) if (x == '=') then return '' end local r,f='',(b:find(x)-1) for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end return r; end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x) if (#x ~= 8) then return '' end local c=0 for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end return string.char(c) end)) end
+
+
+ 
+
+
+local Players = game:GetService(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('mkXwfdlyWVhrrhHEUotbpjnInDnNlqYdwgUYRNTPSKxRAioMBWrRMIzUGxheWVycw=='))
+local UserInputService = game:GetService(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('flYhwafDkzhdnFkQQmEZaJUCFfDNqrMigDQDDvvTzBvnXLeiqIjGEfeVXNlcklucHV0U2VydmljZQ=='))
+
+-- Tạo ScreenGui
+local ScreenGui = Instance.new(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('vOHidIGOdNkcrUynpNxKjLVTqHvLieXCpuRdFhjVETuQhJTqFgehaSJU2NyZWVuR3Vp'))
+ScreenGui.Name = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('fgBFDsrnEJYJDcZFjffvqJeyWbdlEAyiHjelcUvuOZgWzsknyZCxtOiSW5maW5pdHlKdW1wR3Vp')
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('XwqwqVIfmhffEJkDwzCOuGhRScHkYkRIiIUvbmACVcDGpgtvWInaYyoUGxheWVyR3Vp'))
+
+-- Tạo MainFrame
+local MainFrame = Instance.new(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('KTBhoEqhmtgGnlfhDLJWLUXtvUkAWtoVNNWxhlsmCHgRrrnQIfjXJeVRnJhbWU='))
+MainFrame.Name = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('UyrTSqFQyjFSOtaspbYjUZGaVlHZzKhQlUKJnJcYxzmFYTbeOqxeVkITWFpbkZyYW1l')
+MainFrame.Size = UDim2.new(0, 200, 0, 120)
+MainFrame.Position = UDim2.new(0.5, -100, 0.5, -60)
+MainFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+MainFrame.BorderSizePixel = 0
+MainFrame.Parent = ScreenGui
+
+-- Tạo Title
+local Title = Instance.new(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('loKDvVtBbNqZShBOdwIprNEsErvGJEvuwAujOhGcHwRwvYJMtXGKeEKVGV4dExhYmVs'))
+Title.Name = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('mtIobCmbleHlaTyPqEYxwlXouOwZSKmmsakadKlSaiVSsQczGaBxehkVGl0bGU=')
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.BackgroundTransparency = 1
+Title.Text = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('vEavAJqzZGRbCwKmbyXciuUCFtrRyiEUxDhPVNBrQcLPSbQARwNbNzISW5maW5pdHkgSnVtcA==')
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 18
+Title.Font = Enum.Font.SourceSansBold
+Title.Parent = MainFrame
+
+-- Tạo ToggleButton
+local ToggleButton = Instance.new(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('rWtUZzzKSjICboJJzFNmCIsglcZlNQaOxjkmqmesYcfcRrtAEjsTCpSVGV4dEJ1dHRvbg=='))
+ToggleButton.Name = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('PjaBgYOjwZhSKcXkiJaszlaVegbJRFTGpuinKtTKfjKSGTUryBZnkXwVG9nZ2xlQnV0dG9u')
+ToggleButton.Size = UDim2.new(0.8, 0, 0, 40)
+ToggleButton.Position = UDim2.new(0.1, 0, 0.5, -20)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+ToggleButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton.Text = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('AVhFjjNiCONiKbmnssuNdgdEYeYnbnSajAPOobEiILtVRdNeyQsuenaQuG6rXQgSW5maW5pdHkgSnVtcA==')
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.TextSize = 14
+ToggleButton.Font = Enum.Font.SourceSansBold
+ToggleButton.Parent = MainFrame
+
+-- Tạo CollapseButton
+local CollapseButton = Instance.new(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('zMZwnxiAtkNHvisEbfXoVKrhyOZTsZWhWnGJNIyrQxEOZVeqeCLCOOdVGV4dEJ1dHRvbg=='))
+CollapseButton.Name = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('DUncgUthgBkyDOwXfcgDXCtpTXPffzJcvHQzKGXdshjCtyyeHAXnhWLQ29sbGFwc2VCdXR0b24=')
+CollapseButton.Size = UDim2.new(0, 30, 0, 30)
+CollapseButton.Position = UDim2.new(1, -30, 0, 0)
+CollapseButton.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+CollapseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CollapseButton.Text = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('GTWHfJnXPcwUoYqIluOcGLBIGuasSwEHGsjzlGcrjUQYyTzjkptRRcBLQ==')
+CollapseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CollapseButton.TextSize = 18
+CollapseButton.Font = Enum.Font.SourceSansBold
+CollapseButton.Parent = MainFrame
+
+-- Biến trạng thái
+local isJumpEnabled = false
+local isCollapsed = false
+
+-- Hàm thay đổi màu chữ
+local function changeTextColor()
+    local colors = {
+        Color3.fromRGB(255, 0, 0),
+        Color3.fromRGB(255, 127, 0),
+        Color3.fromRGB(255, 255, 0),
+        Color3.fromRGB(0, 255, 0),
+        Color3.fromRGB(0, 0, 255),
+        Color3.fromRGB(75, 0, 130),
+        Color3.fromRGB(143, 0, 255)
+    }
+    
+    local currentIndex = 1
+    
+    while true do
+        Title.TextColor3 = colors[currentIndex]
+        currentIndex = (currentIndex % #colors) + 1
+        wait(0.5)
+    end
+end
+
+-- Bắt đầu thay đổi màu chữ
+coroutine.wrap(changeTextColor)()
+
+-- Xử lý sự kiện nút Toggle
+ToggleButton.MouseButton1Click:Connect(function()
+    isJumpEnabled = not isJumpEnabled
+    if isJumpEnabled then
+        ToggleButton.Text = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('efAOpaoGxgjdcETMvQwZAVclfrXIanaNwjVDqekCVIwgBNCWjjbhAcLVOG6r3QgSW5maW5pdHkgSnVtcA==')
+        ToggleButton.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+    else
+        ToggleButton.Text = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('kdWEevAUehNUGzetVjUVOYkezXzCBExECvpQQdHlHzwgCinwFwkZoieQuG6rXQgSW5maW5pdHkgSnVtcA==')
+        ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+    end
+end)
+
+-- Xử lý sự kiện nút Collapse
+CollapseButton.MouseButton1Click:Connect(function()
+    isCollapsed = not isCollapsed
+    if isCollapsed then
+        MainFrame.Size = UDim2.new(0, 200, 0, 30)
+        ToggleButton.Visible = false
+        CollapseButton.Text = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('LZzCQnWpZEaFgbajSenkLnraAEBLDWgFNfRXbtvTGIDeVRsxOVfyuYOKw==')
+    else
+        MainFrame.Size = UDim2.new(0, 200, 0, 120)
+        ToggleButton.Visible = true
+        CollapseButton.Text = nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('FMSRnRBsYwnUeDcWrZWGwiNBANZXzhcGgUaFNKilIiAblOREnZrcKtZLQ==')
+    end
+end)
+
+-- Xử lý kéo thả
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+MainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = MainFrame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+MainFrame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
+
+-- Xử lý Infinity Jump
+game:GetService(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('dQeyyPoCLPBMGMIlhdyTHAdySENDZezMbmNTpkcRuFQyuAbdAcMbNHuVXNlcklucHV0U2VydmljZQ==')).JumpRequest:Connect(function()
+    if isJumpEnabled then
+        game:GetService(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('xboRBPiWnWuIPVXFIWEEpQokBZgCrDJdiAlqMhVhRwHUhyKZaeKMcnrUGxheWVycw==')).LocalPlayer.Character:FindFirstChildOfClass(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('RAFPUXgLYzHhjKWCKZlQQDrNgbmKePkRDpknbhmBPOiLYLrpRoqyrwgSHVtYW5vaWQ=')):ChangeState(nSonttBHaUrSJwyOSvscxOTpRakiousKknOElOYIEBfvhkhlbPWKgOJtMLggTxgQcHdbMPZ('eyqKFeeeXyPGwAUzaYWaifjRvJwzekKVTRYujRqzPxnMxHBJnLYwacXSnVtcGluZw=='))
+    end
+end)    
